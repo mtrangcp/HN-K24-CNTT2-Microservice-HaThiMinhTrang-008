@@ -3,8 +3,8 @@
 ### 1. Khởi chạy `config-server` (Cổng 8888)
 ### 2. Khởi chạy `eureka-server` (Cổng 8761)
 ### 3. Khởi chạy `api-gateway` (Cổng 8080)
-### 4. Khởi chạy `category-service` (Cổng 8081)
-### 5. Khởi chạy `product-service` (Cổng 8082)
+### 4. Khởi chạy `ỏganizer-service` (Cổng 8081)
+### 5. Khởi chạy `event-service` (Cổng 8082)
 
 ## II. DANH SÁCH API 
 
