@@ -8,60 +8,60 @@
 
 ## II. DANH SÁCH API 
 
-### 1. Tạo mới danh mục (Category)
+### 1. Tạo mới Tổ chức
 - **HTTP Method**: `POST`
-- **URL**: `http://localhost:8080/api/categories`
+- **URL**: `http://localhost:8080/api/organizers`
 - **Header**: `Content-Type: application/json`
 - **Body**:
   ```json
   {
-    "name": "Điện thoại",
-    "description": "Các thiết bị di động thông minh"
+    "name": "FPT",
+    "description": "To chua su kien FPT"
   }
   ```
 - **Response**: `201 Created`
 
-### 2. Lấy thông tin danh mục theo ID
+### 2. Lấy thông tin tổ chức theo ID
 - **HTTP Method**: `GET`
-- **URL**: `http://localhost:8080/api/categories/1`
+- **URL**: `http://localhost:8080/api/organizers/1`
 - **Response**: `200 OK`
 
 ---
 
-### 3. Thêm mới sản phẩm THÀNH CÔNG (categoryId hợp lệ)
+### 3. Thêm mới event THÀNH CÔNG 
 - **HTTP Method**: `POST`
-- **URL**: `http://localhost:8080/api/products`
+- **URL**: `http://localhost:8080/api/events`
 - **Header**: `Content-Type: application/json`
 - **Body**:
   ```json
   {
-    "name": "Sản phẩm A",
-    "price": 15000000,
-    "categoryId": 1
+    "name": "Su kien 20/11 PTIT 222",
+    "description": "Su kien chao mung 20/11 tai PTIT 222",
+    "organizerId": 1
   }
   ```
 - **Response**: `201 Created`
   ```json
   {
     "id": 1,
-    "name": "Sản phẩm A",
-    "price": 15000000.0,
-    "categoryId": 1
+    "name": "Su kien 20/11 PTIT 222",
+    "description": "Su kien chao mung 20/11 tai PTIT 222",
+    "organizerId": 1
   }
   ```
 
 ---
 
-### 4. Thêm mới sản phẩm THẤT BẠI (categoryId không tồn tại)
+### 4. Thêm mới event THẤT BẠI 
 - **HTTP Method**: `POST`
-- **URL**: `http://localhost:8080/api/products`
+- **URL**: `http://localhost:8080/api/events`
 - **Header**: `Content-Type: application/json`
 - **Body**:
   ```json
   {
-    "name": "Sản phẩm B",
-    "price": 20000000,
-    "categoryId": 9999
+    "name": "Su kien 20/11 PTIT 222",
+    "description": "Su kien chao mung 20/11 tai PTIT 222",
+    "organizerId": 99
   }
   ```
 - **Response**: `404 Not Found`
@@ -69,25 +69,16 @@
   ```json
   {
     "status": 404,
-    "message": "Danh mục không tồn tại hoặc không hợp lệ.",
-    "error": "Category Not Found"
+    "message": "Tổ chưức không tồn tại hoặc không hợp lệ.",
+    "error": "Organizer Not Found"
   }
   ```
 
 ---
 
-### 5. Lấy danh sách sản phẩm THÀNH CÔNG
+### 5. Lấy danh sách event THÀNH CÔNG
 - **HTTP Method**: `GET`
-- **URL**: `http://localhost:8080/api/products`
+- **URL**: `http://localhost:8080/api/events`
 - **Response**: `200 OK`
-  ```json
-  [
-    {
-      "id": 1,
-      "name": "Sản phẩm A",
-      "price": 15000000.0,
-      "categoryId": 1
-    }
-  ]
-  ```
+
 
